@@ -12,7 +12,6 @@ import App from './App';
 import {
 	createBrowserRouter,
 	RouterProvider, Link, 
-	Route,
   } from "react-router-dom";
 
 
