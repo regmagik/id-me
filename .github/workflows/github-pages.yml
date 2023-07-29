@@ -28,8 +28,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Clean install with npm ci
-        run: npm ci
+      - name: npm install
+        run: npm i
       - name: Build with npm 
         run: npm run build --if-present      
       - name: Setup Pages
