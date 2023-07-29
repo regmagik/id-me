@@ -1,5 +1,6 @@
 {
-  "name": "msal-react-tutorial",
+  "name": "react-msal",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
