@@ -1,6 +1,14 @@
 # About id-me
 This is an app to practice configuring authentication with Azure AD.
-GitHub pages URL: https://regmagik.github.io/id-me
+GitHub pages URL (hold Ctrl+Shift or Mac Key for new tab): https://regmagik.github.io/id-me 
+
+To make links work on GitHub Pages, I modified the package.json to add 
+
+``` json
+  "homepage": "./",
+```
+
+For some reason, npm install did not update the `package-lock.json`, and `npm ci` command did not use the new `homepage`, so I switched to `using npm` i instead of ci.
 
 # Getting Started with Create React App
 
