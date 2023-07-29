@@ -28,12 +28,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Clean install with npm ci
+        run: npm ci
+      - name: Build with npm 
+        run: npm run build --if-present      
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./public
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
