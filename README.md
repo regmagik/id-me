@@ -1,5 +1,6 @@
 # About id-me
 This is an app to practice configuring authentication with Azure AD.
+GitHub pages URL: https://regmagik.github.io/id-me
 
 # Getting Started with Create React App
 
