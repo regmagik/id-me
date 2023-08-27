@@ -1,5 +1,8 @@
 # About id-me
 This is an app to practice configuring authentication with Azure AD.
+
+Demo URL (hold Ctrl+Shift or Mac Key for new tab): https://id.regmagik.com 
+
 GitHub pages URL (hold Ctrl+Shift or Mac Key for new tab): https://regmagik.github.io/id-me 
 
 To make links work on GitHub Pages, I modified the `package.json` to add 
@@ -7,6 +10,7 @@ To make links work on GitHub Pages, I modified the `package.json` to add
 ``` json
   "homepage": "./",
 ```
+...but this caused other issues, because GH pages don't really support SPAs.
 
 For some reason, npm install did not update the `package-lock.json`, and `npm ci` command did not use the new `homepage`, so I switched to using `npm i` instead of `ci`.
 
