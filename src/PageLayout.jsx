@@ -21,7 +21,6 @@ export const PageLayout = (props) => {
 	React.useEffect(()=>{
 		console.log('in useEffect activeAccount', activeAccount);
 		if(activeAccount) setName(activeAccount.name);
-		else setName("shmizitor");
 	}, [activeAccount, accounts, inProgress]
 	);
 	const accts = instance.getAllAccounts();
@@ -33,27 +32,25 @@ export const PageLayout = (props) => {
 		[accts, activeAccount, accounts, inProgress]
 	);
 
-
-
     return (
-        <>
+        <div class="container">
             <Navbar bg="primary" variant="dark">
                 <a className="navbar-brand" href="/">Demo</a>
 				{ isAuthenticated ? <SignOutButton /> : <SignInButton /> }
             </Navbar>
             <h5>Microsoft Azure Authentication Demo</h5>
-			<p>You get to see this text, no matter if you signed in or not.</p>
+			<p>This paragraph is always visible, no matter if you signed in or not.</p>
             <p>Hi {name}</p>
 			<Button onClick={()=>{
 				const activeAccount = instance.getActiveAccount();
-				setName(activeAccount?.name || "who knows...");
+				setName(activeAccount?.name || "Please Sign-in...");
 			}}>Whoami</Button>
-            <p>Hi others {other}</p>
-            {isAuthenticated ? <p>You are signed in. You can use the app.</p> : <p>You are not signed in! You need to sign in to use this app.</p>}
+            <p>Other accounts {other}</p>
+            {isAuthenticated ? <p>You are signed in.</p> : <p>You are not signed in! Click menu on the top right to sign in.</p>}
 			{isAuthenticated && props.children}
 
 			<div>Signed in users on this device: {accts?.length}: {accts?.map(ac=>ac.name).join(',')}</div>
 			<div>The app was built with React version: {React.version}</div>
-        </>
+        </div>
     );
 };
